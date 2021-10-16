@@ -10,7 +10,6 @@ import { Oferta } from '../shared/oferta.model';
   styleUrls: ['./oferta.component.css'],
   providers: [OfertasService],
 })
-
 export class OfertaComponent implements OnInit, OnDestroy {
   // private tempoObservableSubscription!: Subscription
   // private meuObservableTesteSubscription!: Subscription
@@ -20,7 +19,7 @@ export class OfertaComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((parametros: Params) => {

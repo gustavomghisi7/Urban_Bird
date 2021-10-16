@@ -15,7 +15,7 @@ export class OndeFicaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ofertasService: OfertasService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.parent?.params.subscribe((parametros: Params) => {

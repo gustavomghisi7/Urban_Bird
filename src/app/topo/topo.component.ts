@@ -1,5 +1,5 @@
-import { Observable, of, Subject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
 import { OfertasService } from '../ofertas.service';
 import { Oferta } from '../shared/oferta.model';
 import {
@@ -25,8 +25,8 @@ export class TopoComponent implements OnInit {
 
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa // retorno do array de Ofertas
-      .pipe(debounceTime(1000))        // executa a acao do swtich map apos 1 seg
-      .pipe(distinctUntilChanged())   // para fazer pesquisas distintas
+      .pipe(debounceTime(1000)) // executa a acao do swtich map apos 1 seg
+      .pipe(distinctUntilChanged()) // para fazer pesquisas distintas
       .pipe(
         switchMap((termo: string) => {
           if (termo.trim() === '') {
@@ -46,15 +46,13 @@ export class TopoComponent implements OnInit {
   public pesquisa(termoDaPesquisa: string): void {
     this.subjectPesquisa.next(termoDaPesquisa.trim());
 
-    /*
-      this.ofertas = this.ofertasService.pesquisaOfertas(termoDaPesquisa);
+    // this.ofertas = this.ofertasService.pesquisaOfertas(termoDaPesquisa);
 
-      this.ofertas.subscribe (
-        (ofertas: Oferta[]) => console.log(ofertas),
-        (erro: any) => console.log('Erro status: ', erro.status),
-        () => console.log('fluxo de enventos completo!')
-      );
-    */
+    // this.ofertas.subscribe(
+    //   (ofertas: Oferta[]) => console.log(ofertas),
+    //   (erro: any) => console.log('Erro status: ', erro.status),
+    //   () => console.log('fluxo de enventos completo!')
+    // );
   }
 
   public limpaPesquisa(): void {

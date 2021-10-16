@@ -11,6 +11,6 @@ export class RodapeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 }
