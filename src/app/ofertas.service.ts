@@ -1,18 +1,16 @@
 import { Observable } from 'rxjs';
-import { map, retry } from 'rxjs/operators';
-
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { URL_API } from './app.api';
+import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
+import { URL_API } from './app.api';
+import { map } from 'rxjs/operators';
+import { retry } from 'rxjs/operators';
 
 @Injectable()
-
 export class OfertasService {
   //private url_api = 'http://localhost:3000/ofertas'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getOfertas(): Promise<Oferta[]> {
     return this.http

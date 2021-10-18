@@ -8,7 +8,6 @@ import { OfertasService } from '../ofertas.service';
   styleUrls: ['./diversao.component.css'],
   providers: [ OfertasService ]
 })
-
 export class DiversaoComponent implements OnInit {
 
   public ofertas!: Oferta[]
@@ -21,4 +20,5 @@ export class DiversaoComponent implements OnInit {
         this.ofertas = ofertas
       })
   }
+
 }

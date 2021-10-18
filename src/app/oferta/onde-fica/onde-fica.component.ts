@@ -8,7 +8,6 @@ import { OfertasService } from './../../ofertas.service';
   styleUrls: ['./onde-fica.component.css'],
   providers: [OfertasService],
 })
-
 export class OndeFicaComponent implements OnInit {
   public ondeFica: string = '';
 

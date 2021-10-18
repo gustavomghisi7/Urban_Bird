@@ -8,7 +8,6 @@ import { OfertasService } from '../ofertas.service';
   styleUrls: ['./restaurantes.component.css'],
   providers: [ OfertasService ]
 })
-
 export class RestaurantesComponent implements OnInit {
 
   public ofertas!: Oferta[]
@@ -18,7 +17,8 @@ export class RestaurantesComponent implements OnInit {
   ngOnInit(): void {
     this.ofertasService.getOfertasPorCategoria('restaurante')
       .then(( ofertas: Oferta[]) => {
-        this.ofertas = ofertas
+          this.ofertas = ofertas
       })
   }
+
 }
