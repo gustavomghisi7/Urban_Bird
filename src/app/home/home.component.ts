@@ -8,6 +8,7 @@ import { Oferta } from '../shared/oferta.model';
   styleUrls: ['./home.component.css'],
   providers: [OfertasService]
 })
+
 export class HomeComponent implements OnInit {
 
   public ofertas!: Oferta[]

@@ -15,16 +15,16 @@ import {
   styleUrls: ['./topo.component.css'],
   providers: [OfertasService],
 })
+
 export class TopoComponent implements OnInit {
   public ofertas!: Observable<Oferta[]>;
-
   private subjectPesquisa: Subject<string> = new Subject<string>();
 
-  constructor(private ofertasService: OfertasService) {}
+  constructor(private ofertasService: OfertasService) { }
 
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa // retorno do array de Ofertas
-      .pipe(debounceTime(1000)) // executa a acao do swtich map apos 1 seg
+      .pipe(debounceTime(1000)) // executa a açao do switch map após 1 seg
       .pipe(distinctUntilChanged()) // para fazer pesquisas distintas
       .pipe(
         switchMap((termo: string) => {
@@ -57,6 +57,4 @@ export class TopoComponent implements OnInit {
   public limpaPesquisa(): void {
     this.subjectPesquisa.next('')
   }
-
-
 }
